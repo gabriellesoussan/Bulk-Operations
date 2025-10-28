@@ -1,0 +1,50 @@
+module.exports = {
+  QUERY: {
+    ADD_RELEASE: "AddToRelease",
+    CREATE_RELEASE: "CreateRelease",
+    RELEASE_VERSION: "ReleaseVersion",
+  },
+  LOGS: {
+    QUERY_PARAMS: "Request's query-string params are: ",
+    REQ_BODY: "Request's body: ",
+    RESPONSE: "Final response is: ",
+    ADD_RELEASE: "Bulk Add to Release: ",
+    CREATE_RELEASE: "Create Release: ",
+    BULK_SUCCESS: "Bulk 2.0 successfull",
+    BULK_UNSUCCESS: "Bulk 2.0 unsuccessfull",
+    BATCH_SUCCESS: "Batch processing successfull",
+    BATCH_UNSUCCESS: "Error occurred during processing batches:",
+    RELEASE_VERSION_1: "Release Version: v1",
+    RELEASE_VERSION_2: "Release Version: v2",
+    RELEASE_CHECK_UNSUCCESS: "Error occurred while release version check",
+  },
+  HTTP_CODES: {
+    OK: 200,
+    BAD_REQ: 400,
+    NOT_FOUND: 404,
+    SOMETHING_WRONG: 500,
+  },
+  HTTP_TEXTS: {
+    BAD_REQUEST: "Bad Request",
+    AUTHDATA_MISSING: "Oauth Data is missing",
+    QUERY_MISSING: "Query string parameters are missing.",
+    SOMETHING_WENT_WRONG: "Something went wrong, please try again later.",
+    ADD_RELEASE_SUCCESS: "Your add to release request is in progress.",
+    ADD_RELEASE_ERROR: "Your add to release request is unsuccessful.",
+    CHECK_RELEASE_SUCCESS: "Successfully fetched release version",
+  },
+  HTTP_RESPONSE_HEADERS: {
+    "Access-Control-Allow-Origin": "*",
+    "Content-type": "application/json",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Expose-Headers": "authToken",
+  },
+  API_METHODS: {
+    POST: "POST",
+    CONCURRENCY_LIMIT: 5,
+  },
+  RELEASES: {
+    V1: { BATCH_SIZE: 25, URL: "/v3/releases/{releaseId}/items" },
+    V2: { BATCH_SIZE: 100, URL: "/v3/bulk/release/items", BULK_VERSION: "2.0" },
+  },
+};

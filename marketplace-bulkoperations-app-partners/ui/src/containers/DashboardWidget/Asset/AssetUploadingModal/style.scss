@@ -1,0 +1,133 @@
+.upload-modal {
+  width: 500px;
+  height: 361px;
+  border-radius: 4px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background-color: white;
+  box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.25);
+
+  .upload-modal-header {
+    padding: 0 10px 0 20px;
+    width: 500px;
+    height: 56px;
+    top: 319px;
+    left: 844px;
+    border-radius: 4px;
+    background-color: #3e7b54;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .flex-v {
+      display: flex;
+
+      &:last-of-type {
+        svg:first-of-type {
+          path {
+            fill: #fff !important;
+            stroke: #fff !important;
+          }
+        }
+      }
+    }
+
+    .icon-chevron,
+    .icon-cancel {
+      width: 30px;
+      height: 30px;
+      margin: 0 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+
+      &:hover {
+        background: rgba(34, 34, 34, 0.2);
+      }
+    }
+
+    svg {
+      &:last-of-type {
+        path {
+          stroke: #fff;
+        }
+      }
+
+      &:first-of-type {
+        circle {
+          fill: #fff;
+        }
+      }
+    }
+
+    p {
+      font-family: Inter, Serif, Sans-serif;
+      font-weight: 700;
+      size: 16px;
+      line-height: 19.36px;
+      margin-left: 10px;
+      color: #fff;
+    }
+  }
+
+  .Success-modal-header {
+    .upload-modal .upload-modal-header svg.Icon--original:first-of-type path {
+      fill: #3e7b54 !important;
+      stroke: #3e7b54 !important;
+    }
+  }
+
+  .Warning-modal-header {
+    background-color: #ffab00 !important;
+  }
+
+  .upload-modal-body {
+    height: 305px !important;
+    overflow-y: auto;
+
+    .upload-asset-element {
+      height: 61px;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+
+      .upload-asset-name {
+        font-size: 13px;
+        width: 230px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 100%;
+        margin: 0;
+        padding: 3px 0 !important;
+      }
+
+      .upload-asset-details {
+        width: 200px;
+        margin: 0;
+        height: 100%;
+        padding: 3px 0 !important;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          font-size: 13px;
+        }
+
+        .failed-upload-message {
+          color: #a31b00;
+        }
+      }
+    }
+  }
+}
+
+.display-none {
+  height: 56px !important;
+
+  .upload-modal-body {
+    display: none;
+  }
+}

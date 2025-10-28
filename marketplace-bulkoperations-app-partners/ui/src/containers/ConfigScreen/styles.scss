@@ -1,0 +1,22 @@
+.configscreen-container {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .Info {
+    border-radius: 10px;
+
+    .Info__content {
+      text-align: justify;
+    }
+  }
+
+  .current-version-info {
+    font-style: Inter;
+  }
+
+  .check-release-version {
+    width: 220px;
+  }
+}

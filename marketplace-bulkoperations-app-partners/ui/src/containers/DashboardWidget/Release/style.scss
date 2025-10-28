@@ -1,0 +1,115 @@
+.TabWrapper {
+  & .Tab__item:focus {
+    box-shadow: none !important;
+  }
+
+  & .Tab__name {
+    font-size: 13px;
+  }
+
+  & .Tab {
+    height: 40px !important;
+  }
+
+  & .Tab__Info {
+    margin-top: 0 !important;
+
+    & .Table {
+      height: 428px !important;
+      min-height: 200px !important;
+      overflow-x: auto !important;
+
+      & .Table__body {
+        height: 430px !important;
+
+        & > div {
+          height: unset !important;
+        }
+
+        .Table__body__column {
+          .column-wrapper .tippy-wrapper {
+            width: 100%;
+            height: 100%;
+          }
+
+          .column-wrapper,
+          .content-wrapper {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      & .Table__empty__row {
+        display: none !important;
+      }
+    }
+  }
+
+  & .Tab--secondary .Tab__item--secondary {
+    padding: 18px;
+
+    & > svg:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  & .TableActionPanel .Button--primary .flex-v-center svg g {
+    fill: white !important;
+  }
+
+  & .Select__input {
+    font-size: 16px !important;
+    min-width: 320px !important;
+  }
+}
+
+.add-release-modal-body,
+.create-release {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.add-release-modal-body {
+  & .Select {
+    width: 350px !important;
+  }
+
+  & .Select__menu {
+    margin-left: 0 !important;
+    max-width: unset !important;
+    width: 350px !important;
+    padding-top: 0 !important;
+
+    & .Select__menu-list {
+      height: 130px;
+    }
+  }
+
+  & .Select__add-option {
+    cursor: pointer;
+    color: #475161 !important;
+    font-size: 14px;
+
+    svg {
+      margin: 0 15px;
+    }
+  }
+}
+
+.release-version-container {
+  display: inline-block;
+  margin: 15px 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 14px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  color: rgb(71, 81, 97);
+  letter-spacing: 0.16px;
+  outline-color: rgb(71, 81, 97);
+}

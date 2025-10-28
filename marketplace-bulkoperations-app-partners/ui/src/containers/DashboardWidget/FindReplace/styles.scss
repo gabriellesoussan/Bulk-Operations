@@ -1,0 +1,562 @@
+$btn-disable: #a9b6cb;
+$border-color: #edf1f7;
+$text-color: #475161;
+$label-color: #c7d0e1;
+$placeholder-color: #647696;
+$input-color: #222222;
+$desc-color: #718096;
+
+@mixin default-font {
+  font-family: Inter, Serif, Sans-serif;
+  font-style: normal;
+}
+
+.main-Conatiner {
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+  width: 100%;
+  justify-content: space-between;
+
+  .intial-Conatiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    .action-container {
+      border: 1px solid $border-color;
+      padding: 20px 15px;
+    }
+
+    .select-conatiner {
+      display: flex;
+      flex-direction: row;
+
+      .select-break {
+        margin-top: 25px;
+        width: 20px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      & .Select__loading-indicator {
+        margin-right: -12px !important;
+        display: unset !important;
+        margin-top: 10px !important;
+
+        & > span {
+          height: 0.4em !important;
+          width: 0.4em !important;
+          margin-left: 0.2em !important;
+        }
+      }
+    }
+
+    & .Select {
+      width: 240px;
+
+      & .Select__single-value {
+        width: 100% !important;
+        color: $input-color !important;
+      }
+
+      & .Select--is-disabled {
+        & .Select__placeholder {
+          color: $label-color !important;
+        }
+      }
+
+      & .Select__placeholder {
+        color: $placeholder-color !important;
+      }
+
+      & .Select__control {
+        height: 40px;
+      }
+
+      & .Select__menu {
+        margin-left: 0;
+        min-width: 250px !important;
+        max-width: 500px;
+
+        & .Select__menu-list {
+          max-height: 215px !important;
+        }
+      }
+
+      & div {
+        font-size: 14px !important;
+      }
+    }
+
+    .FieldLabel {
+      font-size: 12px;
+    }
+
+    .FieldLabel--disabled {
+      color: $label-color;
+    }
+
+    .input-conatiner,
+    .next-input-conatiner {
+      width: 250px;
+
+      .TextInput {
+        .TextInput__input {
+          height: 30px;
+          font-size: 14px;
+          color: $input-color !important;
+        }
+      }
+
+      .input-value {
+        input {
+          color: $placeholder-color !important;
+        }
+      }
+
+      .input-value.TextInput--disabled {
+        input:disabled {
+          color: $label-color !important;
+        }
+      }
+
+      #disabled-text::placeholder {
+        color: $label-color !important;
+      }
+    }
+
+    .button-conatiner {
+      width: 100%;
+      margin: 10px 0 0;
+
+      .Button--primary {
+        & svg {
+          & path {
+            stroke: white;
+          }
+        }
+      }
+
+      .preview-button {
+        width: 120px;
+        height: 40px;
+        margin-right: 20px;
+
+        & > div > div {
+          @include default-font();
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 135%;
+        }
+      }
+
+      .replace_btn {
+        svg {
+          height: 15px;
+          width: 15px;
+          rect {
+            display: none;
+          }
+        }
+      }
+
+      .Button--state-disabled {
+        & svg {
+          & path {
+            stroke: $btn-disable;
+            fill: unset !important;
+          }
+        }
+      }
+
+      .publish_btn.Button--state-disabled {
+        & svg {
+          & path {
+            fill: $btn-disable !important;
+          }
+        }
+      }
+    }
+
+    .header-container {
+      border: 1px solid $border-color;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .back_button {
+        margin: 4px 0;
+        height: 40px;
+        margin-left: 5px;
+        svg {
+          margin-right: 5px;
+        }
+      }
+      .selected-entries-container {
+        margin-right: 15px;
+        color: $placeholder-color;
+        @include default-font();
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 135%;
+        letter-spacing: 0.01em;
+      }
+      .no-display {
+        display: none;
+      }
+    }
+
+    .table-Conatiner {
+      width: 100%;
+      height: 100%;
+
+      & .Table {
+        height: 328px !important;
+        min-height: 200px !important;
+        overflow-x: auto !important;
+
+        .TableColumnSticky.TableWithRowAction .Table__head__row {
+          width: auto !important;
+        }
+
+        .Table__head__cell--tableRowAction {
+          min-width: 93px !important;
+        }
+
+        .Table__body__row--complete-disabled {
+          opacity: unset !important;
+        }
+
+        & .Table__body {
+          height: 328px !important;
+
+          & > div {
+            height: unset !important;
+          }
+
+          .Table__body__cell--tableRowAction {
+            min-width: 93px !important;
+          }
+
+          .Table__body__column {
+            .column-wrapper .tippy-wrapper {
+              width: 100%;
+              height: 100%;
+            }
+
+            .column-wrapper,
+            .content-wrapper {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+
+          .Table-select-body.freezed,
+          .Table-select-head.freezed,
+          .Table__body__column.freezed,
+          .Table__head__column.freezed {
+            min-width: 68px !important;
+          }
+
+          .Table__body__column {
+            .column-wrapper .tippy-wrapper {
+              width: 100%;
+              height: 100%;
+            }
+
+            .column-wrapper,
+            .content-wrapper {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+
+          .Table__body__column__resize {
+            width: 100% !important;
+          }
+
+          .TableCol--Title {
+            min-width: 350px !important;
+            width: 350px !important;
+          }
+
+          .TableCol--FieldName {
+            min-width: 350px !important;
+            width: 350px !important;
+          }
+
+          .TableCol--FieldValue {
+            min-width: 350px !important;
+            width: 350px !important;
+          }
+
+          .TableCol--Version {
+            min-width: 120px !important;
+            width: 120px !important;
+          }
+
+          .TableCol--Language {
+            min-width: 180px !important;
+            width: 180px !important;
+          }
+
+          .TableCol--Status {
+            min-width: 120px !important;
+            width: 120px !important;
+          }
+
+          .TableCol--Message {
+            min-width: 400px !important;
+            width: 400px !important;
+          }
+        }
+
+        & .Table__empty__row {
+          display: none !important;
+        }
+
+        .EmptyStateWrapper {
+          .EmptyState {
+            width: 100% !important;
+            max-width: unset;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: -40px;
+            & > svg {
+              height: 65px !important;
+              width: 65px !important;
+              margin-bottom: 20px;
+
+              & > path {
+                stroke: $border-color !important;
+                stroke-width: 1;
+              }
+            }
+
+            .EmptyState__title {
+              width: 410px;
+              height: 27px;
+              @include default-font();
+              font-weight: 800;
+              font-size: 22px;
+              line-height: 27px;
+              text-align: center;
+              letter-spacing: -0.00019em;
+              color: #4a5568;
+            }
+
+            .EmptyState__description {
+              width: 400px;
+              height: 16px;
+              @include default-font();
+              font-weight: 500;
+              font-size: 13px;
+              line-height: 16px;
+              text-align: center;
+              letter-spacing: -6e-5em;
+              color: $desc-color;
+            }
+          }
+        }
+
+        .wrappper-svg {
+          width: unset;
+
+          .Table_ActionsOp {
+            max-height: 30px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+          }
+
+          .Table_hoverActions {
+            width: 150px !important;
+            color: #647696 !important;
+            display: flex;
+            justify-content: center;
+            .flex-v-center {
+              font-weight: 500 !important;
+            }
+          }
+
+          &:hover .Table_hoverActions {
+            color: black !important;
+          }
+        }
+      }
+
+      .TablePanel__list-count {
+        @include default-font();
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 135%;
+        letter-spacing: 0.01em;
+        color: $text-color;
+      }
+
+      .TablePanel__actions {
+        display: none;
+      }
+
+      .Table__head__column-text {
+        @include default-font();
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 135%;
+        letter-spacing: 0.01em;
+        color: $placeholder-color;
+      }
+
+      .Search {
+        svg {
+          height: 12px;
+          width: 12px;
+          margin-top: 1px;
+
+          path {
+            stroke: $placeholder-color;
+          }
+        }
+      }
+
+      .Search-input-show {
+        input {
+          @include default-font();
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 155%;
+        }
+
+        input::placeholder {
+          color: $btn-disable;
+        }
+      }
+
+      & .Table__body__column {
+        @include default-font();
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 155%;
+        color: $text-color;
+
+        & .tippy-wrapper {
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      & .outline-content {
+        font-size: 11px;
+      }
+
+      & .status-success {
+        color: #007a52;
+      }
+
+      & .status-failed {
+        color: #d62400;
+        border: 1px solid #d62400;
+      }
+    }
+  }
+}
+
+.checkBoxWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  width: 100%;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 40px 100px !important;
+
+  &:last-of-type {
+    margin-bottom: 0 !important;
+  }
+
+  & .checkBox {
+    margin: 0 0 0 10px;
+  }
+}
+
+.date-time-text-input {
+  position: relative !important;
+
+  & .Datepicker {
+    position: absolute !important;
+    z-index: 10 !important;
+
+    & .react-datepicker {
+      padding: 5px !important;
+    }
+  }
+}
+
+.replaceModal {
+  .replaceModalBody {
+    p {
+      margin-bottom: 0;
+      @include default-font();
+      font-size: 14px;
+      color: $text-color;
+    }
+  }
+
+  .Button {
+    height: 35px;
+    font-size: 13px;
+    svg {
+      height: 15px;
+      width: 15px;
+      rect {
+        display: none;
+      }
+    }
+  }
+}
+
+.modal-wrapper {
+  & .language--wrapper {
+    display: flex;
+  }
+  & .Checkbox__label,
+  & .language--label {
+    width: 220px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+.ResetModal {
+  @include default-font();
+  font-size: 14px;
+  color: $text-color;
+
+  .Button {
+    height: 35px;
+    font-size: 13px;
+  }
+}
+
+.reference-select-container {
+  margin-top: 5px;
+  border-left: 1px solid $label-color;
+  height: 80px;
+  padding: 10px;
+}
+
+.Toastify__toast-displayMessage {
+  font-size: 12px !important;
+}

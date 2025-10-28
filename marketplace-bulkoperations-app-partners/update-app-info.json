@@ -1,0 +1,34 @@
+{
+    "ui_location": {
+        "signed": false,
+		"base_url": "http://localhost:4000/#",
+		"locations": [
+			{
+				"type": "cs.cm.stack.dashboard",
+				"meta": [
+					{
+						"uid": "64254da81d7c6c1adf9797ad",
+						"name": "Bulk Op - Local",
+						"path": "/dashboard-widget",
+						"signed": true,
+						"enabled": true,
+						"default_width": "full",
+						"required": false
+					}
+				]
+			},
+			{
+				"type": "cs.cm.stack.config",
+				"meta": [
+					{
+						"uid": "68166250bccf17a6f35ebfc2",
+						"path": "/config",
+						"signed": true,
+						"enabled": true,
+						"required": true
+					}
+				]
+			}
+		]
+	}
+}
